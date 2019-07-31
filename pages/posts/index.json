@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-post": "/components/post/index"
+  },
+  "navigationBarTitleText": "content"
+}

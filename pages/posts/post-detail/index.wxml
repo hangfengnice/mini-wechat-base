@@ -1,0 +1,24 @@
+<!--pages/posts/post-detail/index.wxml-->
+<view class='container'>
+  <image class='head-image' src='{{detailData.headImgSrc}}'></image>
+  <image class='audio' src="/images/music/music-start.png"></image>
+  <view class='author-date'>
+    <image class='avatar' src='{{detailData.avatar}}'></image>
+    <text class='author'>{{detailData.author}}</text>
+    <text class='const-text'>发表于:</text>
+    <text class='date'>{{detailData.dateTime}}</text>
+  </view>
+
+  <!-- article -->
+  <text class="title">{{detailData.title}}</text>
+  <view class='tool'>
+    <view class='circle-img'>
+      <image catch:tap='onCollectionTap' src='{{collection ? yesCollection : noCollection}}'></image>
+      <image catch:tap='onShareTap' class='share-img' src="/images/icon/share.png"></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+
+  <!-- 正文 -->
+  <text class='detail'>{{detailData.detail}}</text>
+</view>

@@ -1,0 +1,14 @@
+<!-- pages/posts/index.wxml -->
+<view>
+  <swiper indicator-dots='true' autoplay="{{true}}" interval='2000'>
+    <block wx:for="{{imgUrlData}}" wx:key='{{index}}'>
+      <swiper-item>
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 列表 -->
+  <block wx:for="{{post_content}}" wx:key='{{index}}'>
+    <v-post bind:formChild='onPostTap'  item='{{item}}' /> 
+  </block>
+</view>

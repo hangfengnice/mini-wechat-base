@@ -1,0 +1,9 @@
+<!--pages/welcome/index.wxml-->
+
+<view class='container'>
+  <image class='user-avatar' src='/images/avatar/we.jpeg'></image>
+  <text class='user-name'> Hello, 航锋</text>
+  <view class='moto-container'>
+    <view bind:tap='onTap' class='moto'>小程序起步</view>
+  </view>
+</view>

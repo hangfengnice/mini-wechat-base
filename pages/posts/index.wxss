@@ -1,0 +1,14 @@
+/* pages/posts/index.wxss */
+
+swiper{
+  width: 746rpx;
+  height: 500rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+swiper image{
+  width: 100%;
+  height: 500rpx;
+}
+
