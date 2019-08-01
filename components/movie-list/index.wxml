@@ -1,0 +1,20 @@
+<!--components/movie-list/index.wxml-->
+
+<view class="movie_list_container">
+  <view class="inner_container">
+    <view class="movie_head">
+      <text class="solgan">{{movies.title}}</text>
+      <view catch:tap='onMoretap' class="more" data-category="{{movies.title}}">
+        <text  class="more_text">更多</text>
+        <image class="more_img" src="/images/icon/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="moives_container">
+    <block wx:for='{{movies.movies}}' wx:key='{{index}}'>
+        <v-movie movie='{{item}}'></v-movie>
+    </block>
+  </view>
+ 
+</view>

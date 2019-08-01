@@ -1,0 +1,10 @@
+/* components/movie-grid/index.wxss */
+
+.grid_container{
+  margin: 40rpx 0 40rpx 6rpx;
+}
+
+.single_view_container{
+  float: left;
+  margin-bottom: 40rpx;
+}

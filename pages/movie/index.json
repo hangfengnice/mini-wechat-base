@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "v-movie": "/components/movie-list/index",
+    "v-search": "/components/movie-grid/index"
+  },
+  "navigationBarTitleText": "电影"
+
+}

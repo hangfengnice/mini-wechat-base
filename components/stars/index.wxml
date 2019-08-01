@@ -1,0 +1,10 @@
+<!--components/stars/index.wxml-->
+
+<view class="star_container">
+  <view class="stars">
+    <block wx:for="{{ star }}" wx:key="index">
+      <image src="{{item == 1 ? '/images/icon/star.png' : '/images/icon/none-star.png'}}"></image>
+    </block>
+  </view>
+  <text>{{ score }}</text>
+</view>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "v-movie": "../movie/index"
+  },
+  "onReachBottomDistance": 50
+}

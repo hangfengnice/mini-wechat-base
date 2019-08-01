@@ -16,8 +16,17 @@ Page({
   },
 
   onTap(){
-    wx.redirectTo({
-      url: '../posts/index'
+    wx.switchTab({
+      url: '/pages/posts/index',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
     })
   }
 

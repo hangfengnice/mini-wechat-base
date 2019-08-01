@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-movie-grid": "/components/movie-grid/index"
+  },
+  "enablePullDownRefresh": true
+}

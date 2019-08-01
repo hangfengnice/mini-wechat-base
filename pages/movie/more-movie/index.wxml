@@ -1,0 +1,5 @@
+<!--pages/movie/more-movie/index.wxml-->
+
+<view>
+  <v-movie-grid bind:movieGrid='onScrollLower' movies='{{movies}}'></v-movie-grid>
+</view>

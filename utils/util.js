@@ -1,23 +1,60 @@
-const formatTime = date => {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-  const second = date.getSeconds();
+function http(url, callback) {
+  wx.request({
+    url,
+    method: "GET",
+    header: {
+      "Content-Type": "json"
+    },
+    success: res => {
+      callback(res.data)
+    }
+  });
+}
 
-  return (
-    [year, month, day].map(formatNumber).join("/") +
-    " " +
-    [hour, minute, second].map(formatNumber).join(":")
-  );
-};
+function douban_limit() {
+    var timestamp = Date.parse(new Date());
+    var requestDoubanTime = wx.getStorageSync('requestDoubanTime')
+    console.log(timestamp, requestDoubanTime)
+    var requestDoubanNum = wx.getStorageSync('requestDoubanNum');
+    if (requestDoubanTime && timestamp - requestDoubanTime < 30000) {
+        wx.setStorageSync('requestDoubanNum', requestDoubanNum += 1);
+        if (requestDoubanNum < 10) {
+            //Lower than 35/m,pass            
+            return;
+        }
+        else {
+            wx.showToast({
+                title: '豆瓣api请求频率超10，小心',
+                icon: 'loading',
+                duration: 5000
+            })
+            //提示或者去别的地方
+            // wx.redirectTo({
+            //      url:"pages/welcome/welcome"
+            // });
+        }
+    }
+    else {
+        wx.setStorageSync('requestDoubanTime', timestamp);
+        wx.setStorageSync('requestDoubanNum', 1);
+    }
+}
 
-const formatNumber = n => {
-  n = n.toString();
-  return n[1] ? n : "0" + n;
-};
+function converToStarsArray(stars) {
+  var num = stars.toString().substring(0, 1);
+  var array = [];
+  for (var i = 1; i <= 5; i++) {
+    if (i < num) {
+      array.push(1);
+    } else {
+      array.push(0);
+    }
+  }
+  return array;
+}
 
 module.exports = {
-  formatTime: formatTime
+  converToStarsArray,
+  http,
+  douban_limit
 };
