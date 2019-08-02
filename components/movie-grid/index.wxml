@@ -1,6 +1,5 @@
 <!--components/movie-grid/index.wxml-->
 
-<text>搜索页面出来了</text>
 <view>
   <view class="grid_container">
       <block wx:for="{{movies}}" wx:key='{{index}}'>

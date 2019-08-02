@@ -48,7 +48,8 @@ Page({
     var refreshUrl = this.data.requestUrl + "?start=0&count=20";
     this.setData({
       movies: null,
-      isEmpty: true
+      isEmpty: true,
+      totalCount: 0
     })
     http(refreshUrl, this.processDoubanData)
     wx.showNavigationBarLoading()
